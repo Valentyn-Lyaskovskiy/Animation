@@ -45,12 +45,12 @@
 }
 
 .wrapper img{
-  transition: .8s all ease-in;
-
+  /* transform: translateY(-100%); */
+    animation: mavic-off 1s;
 }
 
 .wrapper:hover img{
-  transform: translateY(-100%);
+  animation: mavic-on 1s forwards;
 }
 
 .text{
@@ -62,11 +62,38 @@
   font-weight: 700;
 }
 
-@keyframes identifier {
+    @keyframes mavic-on {
   0%{
-    transform: translateX(-100%);
+  transform: translateY(0);
   }
+
   100%{
-    transform: translateX(0%);
+  transform: translateY(-100%);
+  }
+  }
+  
+  @keyframes mavic-off {
+    0% {
+      transform: translateY(-100%);
+    }
+  
+    50% {
+      transform: translateY(0);
+    }
+  
+    60% {
+      transform: translateY(-20px);
+    }
+  
+    70% {
+      transform: translateY(0);
+    }
+  
+    80% {
+      transform: translateY(-30px);
+    }
+  
+    100% {
+      transform: translateY(0);
   }
 }
