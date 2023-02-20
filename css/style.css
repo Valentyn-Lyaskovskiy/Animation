@@ -1,0 +1,72 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper::before, 
+.wrapper::after{
+  position: absolute;
+  content: '';
+  width: 300px;
+  height: 300px;
+  transition: all .8s ease-in;
+}
+
+.wrapper::before{
+  background-image: url('../img/iphone-back.png');
+  left: 25%;
+  transform: translate(-50%, 200%) rotate(-30deg);
+}
+
+.wrapper::after{
+  background-image: url('../img/iphone-front.png');
+  right: 25%;
+  transform: translate(50%, 200%) rotate(30deg);
+} 
+
+.wrapper:hover::before, 
+.wrapper:hover::after{
+  transform: translate(0, 0) rotate(0);
+}
+
+.wrapper{
+  position: relative;
+  width: 800px;
+  min-height: 400px;
+  margin: 50px auto;
+  background-color: navy;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.wrapper img{
+  transition: .8s all ease-in;
+
+}
+
+.wrapper:hover img{
+  transform: translateY(-100%);
+}
+
+.text{
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+@keyframes identifier {
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+}
